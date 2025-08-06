@@ -1,0 +1,169 @@
+:root {
+  --bg: #0b1020;
+  --card: #121834;
+  --muted: #9aa3b2;
+  --text: #e7ecf5;
+  --accent: #7aa2f7;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.gap {
+  gap: 0.5rem;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 820px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+}
+
+input::placeholder {
+  color: #96a0b3;
+}
+
+button {
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #0b1020;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button.danger {
+  background: var(--danger);
+  color: white;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filters button[aria-pressed="true"] {
+  outline: 2px solid #fff;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.task-list li.done span {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+.error {
+  color: #fecaca;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather .temp {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.weather .details .city {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.weather .details .desc {
+  color: var(--muted);
+}
